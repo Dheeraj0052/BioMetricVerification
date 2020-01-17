@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             object : AuthenticationCallback(){
                 override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                     super.onAuthenticationError(errorCode, errString)
-                    if (errorCode ==androidx.biometric.BiometricPrompt.ERROR_CANCELED) {
+                    if (errorCode ==androidx.biometric.BiometricPrompt.ERROR_NEGATIVE_BUTTON) {
                         runOnUiThread{
                             Toast.makeText(activity,"Authentication failed! Please try again.", Toast.LENGTH_LONG).show()
                             finish()
